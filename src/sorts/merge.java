@@ -25,6 +25,7 @@ public class merge {
         arr = mergeSort(arr);
         long end = System.nanoTime();
         long gg = (end - start) / 1000;
+        gg/=1000;
         System.out.println(gg);
     }
 

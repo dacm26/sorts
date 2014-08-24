@@ -15,7 +15,7 @@ import java.util.Random;
  */
 public class insertion {
 
-    private static final int LENGTH = 1000;
+    private static final int LENGTH = 1000000;
 
     public static void main(String[] args) {
         int[] arr = new int[LENGTH];
@@ -35,6 +35,8 @@ public class insertion {
         }
         long end = System.nanoTime();
         long gg = (end - start) / 1000;
+        gg/=1000;
+        gg/=1000;
         System.out.println(gg);
 
     }

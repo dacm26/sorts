@@ -15,8 +15,6 @@ import java.util.Random;
  */
 public class radix {
 
-    private static final int LENGTH = 1000;
-
     // Define the queues.
     private static LinkedList[] q = {
         new LinkedList(), // 0
@@ -31,11 +29,8 @@ public class radix {
         new LinkedList() // 9
     };
 
-    /**
-     * Main method.
-     *
-     * @param args
-     */
+    private static final int LENGTH = 1000000;
+
     public static void main(String[] args) {
         // Random List.
         Object[] list = new Object[LENGTH];
@@ -50,16 +45,12 @@ public class radix {
         Object[] sortedList = sort(list);
         long end = System.nanoTime();
         long gg = (end - start) / 1000;
+        gg=gg/1000;
         System.out.println(gg);
 
     }
 
-    /**
-     * Sorts an array of objects (integers) using radix sort.
-     *
-     * @param list The unsorted list.
-     * @return The sorted list.
-     */
+
     public static Object[] sort(Object[] list) {
         // Get the maximum number of digits.
         int maxDigits = getMaxDigits(list);
@@ -92,12 +83,7 @@ public class radix {
 
     }
 
-    /**
-     * Gets the maximum digits of a list of integers.
-     *
-     * @param list
-     * @return
-     */
+
     public static int getMaxDigits(Object list[]) {
         // Define the max digits.
         int maxDigits = 0;
@@ -120,12 +106,7 @@ public class radix {
         return maxDigits;
     }
 
-    /**
-     * Gets the number of digits the specified number has.
-     *
-     * @param i
-     * @return
-     */
+
     public static int getDigits(int i) {
         if (i < 10) {
             return 1;
@@ -133,13 +114,6 @@ public class radix {
         return 1 + getDigits(i / 10);
     }
 
-    /**
-     * Gets the digit at the specified radix of the specified number.
-     *
-     * @param number
-     * @param radix
-     * @return
-     */
     public static int getDigitAt(int number, int radix) {
         return (int) (number / Math.pow(10, radix - 1)) % 10;
     }

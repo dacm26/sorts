@@ -15,7 +15,7 @@ import java.util.Random;
  */
 public class selection {
 
-    private static final int LENGTH = 1000;
+    private static final int LENGTH = 100000;
 
     public static void main(String[] args) {
         int[] x = new int[LENGTH];
@@ -35,6 +35,7 @@ public class selection {
         }
         long end = System.nanoTime();
         long gg = (end - start) / 1000;
+        gg/=1000;
         System.out.println(gg);
 
     }
